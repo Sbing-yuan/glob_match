@@ -1,13 +1,13 @@
-Test_Compile:
-	iverilog -g2012 -o Test.o TestTop.v
+Test.o: TestTop.v
+	iverilog -g2012 -o $@ TestTop.v
 
-run_CASE1:
+run_CASE1: Test.o
 	vvp Test.o +CASE=I01_I2C
 
-run_CASE2:
+run_CASE2: Test.o
 	vvp Test.o +CASE=I01_SPI
 
-run_CASE3:
+run_CASE3: Test.o
 	vvp Test.o +CASE=I02_I2C
 
 clean:
