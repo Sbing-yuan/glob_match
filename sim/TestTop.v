@@ -14,7 +14,7 @@ initial begin
 
         if     (glob_match("*SPI", CASE))
             $display("\tInterface Case SPI");
-        else if(glob_match("I02*", CASE))
+        else if(glob_match("*I2C", CASE))
             $display("\tInterface Case I2C");
 
     end
